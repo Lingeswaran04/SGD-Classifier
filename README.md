@@ -7,14 +7,19 @@ To write a program to predict the type of species of the Iris flower using the S
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. Start the program.
-2. Load the Iris dataset using load_iris() from sklearn.datasets.Create a DataFrame from the dataset and add the target column.
-3. Separate the features (x) and target labels (y).Split the dataset into training and testing sets using train_test_split() with an 80-20 split.
-4. Instantiate an SGD Classifier (SGDClassifier) with a maximum of 1000 iterations and tolerance (tol=1e-3).
-5. Train the model using the training data (x_train and y_train) with the fit() method.
-6. Predict the target labels for the test set (x_test) using the trained model.
-7. Calculate the accuracy of the model using accuracy_score().Generate the confusion matrix using confusion_matrix().
-8. Print the accuracy and confusion matrix.
+1. Import the necessary libraries, including `pandas` for data manipulation, `sklearn` for machine learning, and the Iris dataset from `sklearn.datasets`.
+2. Load the Iris dataset using `load_iris()` from `sklearn.datasets`.
+3. Create a DataFrame using `pd.DataFrame()` to organize the Iris dataset. Use `iris.data` for the features and `iris.target` for the target variable. Name the columns of the DataFrame using `iris.feature_names`.
+4. Print the first few rows of the DataFrame using `df.head()` to verify the dataset's structure.
+5. Separate the features (`X`) and the target variable (`y`). Drop the `target` column from the DataFrame to get `X`, and assign the `target` column to `y`.
+6. Split the dataset into training and testing subsets using `train_test_split()`. Use `test_size=0.2` to allocate 20% of the data for testing and `random_state=42` for reproducibility.
+7. Initialize an instance of `SGDClassifier` with parameters `max_iter=1000` and `tol=1e-3` to set the maximum number of iterations and the tolerance for stopping criteria.
+8. Fit the `SGDClassifier` model to the training data (`X_train`, `y_train`) using the `fit()` method.
+9. Predict the target values for the test data (`X_test`) using the trained model's `predict()` method. Store the predictions in `y_pred`.
+10. Calculate the accuracy of the model using `accuracy_score()`, which compares the true target values (`y_test`) with the predicted values (`y_pred`).
+11. Print the calculated accuracy, formatted to three decimal places.
+12. Generate a confusion matrix using `confusion_matrix()` to evaluate the model's performance across all target classes.
+13. Print the confusion matrix for analysis.
 
 ## Program:
 ### DATA:
